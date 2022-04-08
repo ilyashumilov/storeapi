@@ -19,11 +19,12 @@ class faces(DeclarativeBase):
     password = Column('password',String)
 
 def session():
-    engine = create_engine('postgresql+psycopg2://rmjkkfztznehnk:de9e4eddba3aadccff525097dc8c85e3a7b25529a591b21f906cb0e6298f129b@ec2-54-157-79-121.compute-1.amazonaws.com:5432/d4tsi97rnohqqf')
+    engine = create_engine('postgresql+psycopg2://kgymkjkyzwwdzm:ba0a643ecd2daeff4c8074bc1feb3e4e1edb1fb20742d42265ad9a17349c31fb@ec2-3-217-251-77.compute-1.amazonaws.com:5432/d7gde9hja1e92a',connect_args={'sslmode':'require'}, echo=True)
     DeclarativeBase.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
     return session
+
 
 class init:
     def __init__(self):
@@ -40,5 +41,6 @@ class init:
         s.add(item)
         s.commit()
 
-if __name__=='__main__':
-    init()
+#if __name__=='__main__':
+#    init()
+    

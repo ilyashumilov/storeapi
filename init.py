@@ -5,4 +5,4 @@ payload = {
     'amount':5
 }
 
-print(requests.post('https://storeapiservice.herokuapp.com/',json=payload, auth = HTTPBasicAuth('Manuel', 'Manuel')).text)
+print(requests.post('https://storeappapi.herokuapp.com/',json=payload, auth = HTTPBasicAuth('Frabian','Frabian')).text)
